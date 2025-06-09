@@ -1,0 +1,205 @@
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f4f7f6;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Align to top for longer content */
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#app-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    max-width: 1200px;
+    overflow: hidden; /* Contains floats and rounded corners */
+}
+
+header {
+    background-color: #007bff; /* A vibrant blue */
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 3px solid #0056b3;
+}
+
+header h1 {
+    font-size: 1.8em;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    padding: 20px;
+}
+
+#info-panel {
+    flex: 1; /* Takes up 1 part of the space */
+    min-width: 300px; /* Minimum width before wrapping */
+    padding-right: 20px;
+    border-right: 1px solid #e0e0e0; /* Subtle separator */
+}
+
+#info-panel h2, #info-panel h3 {
+    color: #0056b3; /* Darker blue for headings */
+    margin-bottom: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid #eee;
+}
+
+#explanation-text ul {
+    list-style-position: inside;
+    padding-left: 0;
+    margin-bottom: 15px;
+}
+
+#explanation-text li {
+    margin-bottom: 5px;
+}
+
+#explanation-text p {
+    margin-bottom: 10px;
+}
+
+#controls {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e9ecef; /* Light grey background for controls */
+    border-radius: 6px;
+}
+
+.control-group {
+    margin-bottom: 15px;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: #495057;
+}
+
+#fieldType {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    background-color: white;
+    font-size: 1em;
+}
+
+#generateScenario {
+    background-color: #28a745; /* Green for action button */
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.2s ease-in-out;
+    width: 100%;
+}
+
+#generateScenario:hover {
+    background-color: #218838; /* Darker green on hover */
+}
+
+#generateScenario:active {
+    background-color: #1e7e34;
+}
+
+#scenario-info {
+    margin-top: 15px;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #495057;
+}
+
+#current-scenario-type {
+    font-weight: bold;
+}
+
+
+#simulator-panel {
+    flex: 2; /* Takes up 2 parts of the space */
+    min-width: 400px; /* Minimum width for canvas */
+    padding-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* For tooltip positioning */
+}
+
+#simulationCanvas {
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    background-color: #f9f9f9; /* Slightly off-white canvas background for grid visibility */
+    max-width: 100%; /* Ensure canvas is responsive */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.tooltip {
+    position: fixed; /* Use fixed if relative to viewport, absolute if relative to a positioned parent */
+    background-color: rgba(0, 0, 0, 0.85);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.9em;
+    pointer-events: none; /* So it doesn't interfere with canvas mouse events */
+    opacity: 0;
+    transition: opacity 0.1s ease-out; /* Faster transition */
+    transform: translate(10px, -25px); /* Position slightly offset from cursor */
+    white-space: nowrap;
+    z-index: 1000; /* Ensure tooltip is on top */
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background-color: #e9ecef; /* Consistent with controls background */
+    color: #6c757d; /* Muted text color */
+    font-size: 0.9em;
+    border-top: 1px solid #dee2e6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    #info-panel {
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid #e0e0e0; /* Separator for stacked layout */
+        margin-bottom: 20px;
+    }
+
+    #simulator-panel {
+        padding-left: 0;
+    }
+
+    #simulationCanvas {
+        width: 100%; /* Make canvas full width on smaller screens */
+    }
+
+    .tooltip { /* Adjust tooltip for mobile if needed, though current might be fine */
+        transform: translate(5px, -25px);
+    }
+}

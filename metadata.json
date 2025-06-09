@@ -1,0 +1,6 @@
+{
+  "name": "SC0v1: Vectors vs. Scalars",
+  "description": "Start of transcript. Skip to the end.\nHere we will learn to distinguish\nbetween vectors and scalars.\nVectors are objects that have both a magnitude,\na single number, and a direction.\nWhereas scalars have only a magnitude.\nLet's see some examples of each.\nThe length of something is a scalar\nbecause it's just the magnitude.\nA force exerted by someone pulling something\nis a vector because we care about the strength\nof the force, the magnitude, and the direction\nin which the force is acting.\nTemperature-- it's a scalar.\nIf we display temperature on a weather map\nwhere the value of the temperature\nis different at each point in space, this is a scalar field.\nIn comparison, this weather map of wind\nwhere the value of the wind velocity at each point in space\nis represented by a vector is a vector field.\nEnd of transcript. Skip to the start",
+  "requestFramePermissions": [],
+  "prompt": ""
+}
