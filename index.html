@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vectors vs. Scalars Simulator</title>
+  <script type="module" crossorigin src="/assets/index-DPqs5Vhr.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-itG1TfnE.css">
+</head>
+<body>
+    <div id="app-container">
+        <header>
+            <h1>Vectors vs. Scalars Simulator</h1>
+        </header>
+        <main>
+            <div id="info-panel">
+                <h2>Understanding Vectors and Scalars</h2>
+                <div id="explanation-text">
+                    <p><strong>Scalars:</strong> Quantities that have only a magnitude (a single number). Examples:</p>
+                    <ul>
+                        <li>Length of an object.</li>
+                        <li>Temperature at a point.</li>
+                    </ul>
+                    <p><strong>Vectors:</strong> Quantities that have both a magnitude and a direction. Examples:</p>
+                    <ul>
+                        <li>Force exerted (e.g., pulling something) - has strength (magnitude) and direction.</li>
+                        <li>Wind velocity - has speed (magnitude) and direction.</li>
+                    </ul>
+                    <p><strong>Fields:</strong></p>
+                    <ul>
+                        <li><strong>Scalar Field:</strong> A region where a scalar quantity (like temperature) has a value at every point. Example: A weather map showing temperature variations.</li>
+                        <li><strong>Vector Field:</strong> A region where a vector quantity (like wind velocity) has a value (magnitude and direction) at every point. Example: A weather map showing wind patterns with arrows.</li>
+                    </ul>
+                </div>
+                <div id="controls">
+                    <h3>Simulator Controls</h3>
+                    <div class="control-group">
+                        <label for="fieldType">Choose field type:</label>
+                        <select id="fieldType" aria-label="Select field type">
+                            <option value="scalar">Scalar Field (Temperature)</option>
+                            <option value="vector">Vector Field (Wind)</option>
+                        </select>
+                    </div>
+                    <button id="generateScenario" aria-label="Generate new scenario">Generate New Scenario</button>
+                </div>
+                 <div id="scenario-info">
+                    Current Scenario: <span id="current-scenario-type"></span>
+                </div>
+            </div>
+            <div id="simulator-panel">
+                <canvas id="simulationCanvas" width="500" height="500" aria-label="Simulation of scalar or vector field"></canvas>
+                <div id="tooltip" class="tooltip" aria-live="polite"></div>
+            </div>
+        </main>
+        <footer>
+            <p>Explore different scenarios to understand scalar and vector fields.</p>
+        </footer>
+    </div>
+</body>
+</html>
